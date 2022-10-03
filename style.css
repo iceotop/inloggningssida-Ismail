@@ -81,7 +81,10 @@ body {
 body {
 
     background-image:url(swimming.jpg);
+    background-position: bottom right;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
 }
 
