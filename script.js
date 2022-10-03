@@ -1,16 +1,19 @@
+//* - User - */
 const accountNameExpected = "Sara";
 const accountPassExpected = "qwe123";
-
+/* - Access to html-div - */
 const accessFuncDiv = document.body.querySelector(".access-function");
 
+/* - Upon refresh - */
 let accountNameStored = localStorage.getItem("Account Name");
 let accountPasswordStored = localStorage.getItem("Account Password")
 let btnTryAgainState = localStorage.getItem("State");
 
-/* - Upon refresh - */
 if (accountNameStored == accountNameExpected && accountPasswordStored == accountPassExpected) {
 
     placeLogout();
+    const LogOutTextChange = document.getElementById("LogOutText");
+    LogOutTextChange.innerHTML = "Du är inloggad";
 
 }
 else if (btnTryAgainState) {
@@ -24,6 +27,7 @@ else {
     placeLogin();
 
 }
+/* ------------------------------------------------------------------------------------------------- */
 
 
 function placeLogin() {
@@ -94,6 +98,7 @@ function placeLogout() {
 /*1 paragraph*/
 const paraElement = document.createElement("p");
 const paraText = document.createTextNode("Välkommen, du är nu inloggad");
+paraElement.setAttribute("id", "LogOutText");
 /*1 button*/
 const btnLogoutElement = document.createElement("button");
 const btnLogoutText = document.createTextNode("Log out");
